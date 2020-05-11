@@ -23,11 +23,9 @@ resource "azurerm_kubernetes_cluster" "spark-k8s" {
   }
 
   default_node_pool {
-    name            = "default"
-    count           = "${var.agent_count}"
-    vm_size         = "Standard_A2_v2"
-    os_type         = "Linux"
-    os_disk_size_gb = 30
+    name       = "default"
+    node_count = "${var.agent_count}"
+    vm_size    = "Standard_A2_v2"
   }
 
   service_principal {
