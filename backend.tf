@@ -1,6 +1,5 @@
 terraform {
   backend "remote" {
-    # Terrafrom Cloud organization
     organization = "lebweb-services"
 
     workspaces {

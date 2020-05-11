@@ -27,7 +27,7 @@ resource "azurerm_kubernetes_cluster" "spark-k8s" {
   default_node_pool {
     name       = "default"
     node_count = var.agent_count
-    vm_size    = "Standard_A2_v2"
+    vm_size    = var.vm_size
   }
 
   service_principal {
@@ -40,6 +40,5 @@ resource "azurerm_kubernetes_cluster" "spark-k8s" {
       enabled = true
     }
   }
-
 }
 
