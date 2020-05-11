@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "spark-k8s" {
- name = "${var.k8s_resource_group_name}"
- location = "${var.location}"
+  name     = "${var.k8s_resource_group_name}"
+  location = "${var.location}"
 }
 resource "azurerm_kubernetes_cluster" "spark-k8s" {
   name                = "${var.cluster_name}"
@@ -12,7 +12,7 @@ resource "azurerm_kubernetes_cluster" "spark-k8s" {
     admin_username = "ubuntu"
 
     ssh_key {
-      key_data = "${file("${var.ssh_public_key}")}"
+      key_data = "${var.ssh_public_key}"
     }
   }
 
