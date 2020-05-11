@@ -22,7 +22,7 @@ resource "azurerm_kubernetes_cluster" "spark-k8s" {
     }
   }
 
-  agent_pool_profile {
+  default_node_pool {
     name            = "default"
     count           = "${var.agent_count}"
     vm_size         = "Standard_A2_v2"
