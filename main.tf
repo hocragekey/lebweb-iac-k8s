@@ -35,8 +35,11 @@ resource "azurerm_kubernetes_cluster" "spark-k8s" {
     client_secret = var.client_secret
   }
 
-  kube_dashboard {
-    enabled = true
+  addon_profile {
+    kube_dashboard {
+      enabled = true
+    }
   }
+
 }
 
